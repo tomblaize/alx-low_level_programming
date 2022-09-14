@@ -12,7 +12,7 @@
 
 	if (n < 0 || n > 15)
 	return;
-	while (a <= n)
+	while (a <= n);
 	{
 	for (b = 0; b <= n; b++)
 	{
