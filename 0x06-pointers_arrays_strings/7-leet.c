@@ -1,38 +1,24 @@
 #include "main.h"
-#include "encode.c"
-#include <stdio.h>
 
 /**
- * leet - encodes a string into 1337.
+ * leet - encodes a string into 1337
+ * @s: string to encode
  *
- * @str: string to be encoded
- *
- * Return: encoded string
+ * Return: address of s
  */
-int main(void)
+char *leet(char *s)
 {
-    char s[] = "Expect the best. Prepare for the worst. Capitalize on what comes.\n";
-    char *p;
+	int i, j;
+	char a[] = "aAeEoOtTlL";
+	char b[] = "4433007711";
 
-    p = leet(s);
-    printf("%s", p);
-    printf("%s", s);
-    return (0);
-}
-char *leet(char *str)
-{
-	int i, len;
-	char *code[] = {"a", "A", "e", "E", "o", "O", "l", "L", "t", "T"};
-
-	len = sizeof(code) / sizeof(code[0]);
-	for (i = 0; str[i] != '\0'; i++)
+	for (i = 0; *(s + i); i++)
 	{
-		for (; (len--) >= 0; len--)
+		for (j = 0; j <= 9; j++)
 		{
-			if ((str[i]) == code[len])
-			//	printf("%d", encode(code[len]));
-				printf("spotted ");
+			if (a[j] == *(s + i))
+				*(s + i) = b[j];
 		}
 	}
-	return (str);
+	return (s);
 }
