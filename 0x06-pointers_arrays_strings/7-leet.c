@@ -1,4 +1,5 @@
 #include "main.h"
+#include "encode.c"
 #include <stdio.h>
 
 /**
